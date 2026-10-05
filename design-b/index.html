@@ -95,13 +95,18 @@ html.shot .hdr{position:relative}
 .marq div{display:flex;gap:44px;white-space:nowrap;padding:20px 0;font:700 18px/1 var(--disp);letter-spacing:.06em;text-transform:uppercase;width:max-content}
 .marq i{font-style:normal;opacity:.55}
 .idx{border-top:2px solid var(--ink)}
-.idx a{display:grid;grid-template-columns:90px 1.3fr 1.2fr 150px 160px;gap:28px;align-items:center;padding:26px 0;border-bottom:1px solid var(--line)}
-.idx .no{font:700 18px/1 var(--disp);color:#8E7024}
-.idx h3{font-size:44px;text-transform:uppercase;letter-spacing:-.03em}
-.idx p{margin:0;color:var(--mut);font-size:15px}
-.idx .pr{font:700 18px/1 var(--disp);text-align:right}.idx .pr small{display:block;font:500 12px/1.4 Inter;color:var(--mut);margin-top:6px}
-.idx .th{height:110px;background:var(--paper);display:grid;place-items:center}.idx .th img{height:96px;width:auto;mix-blend-mode:multiply}
-.idx a.feat{background:var(--navy);color:#fff;padding-left:24px;padding-right:24px;margin:0 -24px;border-bottom:0}.idx a.feat p{color:#C6CAE0}.idx a.feat .no{color:var(--gold)}.idx a.feat .th{background:#fff}
+.idx a{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:48px;align-items:center;padding:40px 0;border-bottom:1px solid var(--line)}
+.idx a .body{order:1;display:grid;grid-template-columns:72px minmax(0,1fr);column-gap:22px;row-gap:10px;align-items:start}
+.idx a .th{order:2;height:260px;background:var(--paper);display:grid;place-items:center;overflow:hidden}
+.idx a .th img{height:90%;width:auto;max-width:92%;object-fit:contain;mix-blend-mode:multiply}
+.idx a:nth-child(even){grid-template-columns:280px minmax(0,1fr)}
+.idx a:nth-child(even) .th{order:1}
+.idx a:nth-child(even) .body{order:2}
+.idx .no{font:700 18px/1 var(--disp);color:#8E7024;grid-row:1/span 3;padding-top:8px}
+.idx h3{font-size:44px;text-transform:uppercase;letter-spacing:-.03em;grid-column:2}
+.idx p{margin:0;color:var(--mut);font-size:15.5px;grid-column:2;max-width:520px}
+.idx .pr{font:700 20px/1 var(--disp);grid-column:2;margin-top:6px}.idx .pr small{display:inline;font:500 13px/1.4 Inter,sans-serif;color:var(--mut);margin-left:10px}
+.idx a.feat{background:var(--navy);color:#fff;padding-left:28px;padding-right:28px;margin:0 -28px;border-bottom:0}.idx a.feat p{color:#C6CAE0}.idx a.feat .no{color:var(--gold)}.idx a.feat .th{background:#fff}
 .how{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.2)}
 .how div{padding:44px 40px 10px 0;border-right:1px solid rgba(255,255,255,.2);margin-right:40px}.how div:last-child{border:0;margin:0}
 .how .big{font:700 120px/.8 var(--disp);color:transparent;-webkit-text-stroke:2px var(--gold);display:block;margin-bottom:28px}
@@ -131,10 +136,14 @@ html.shot .hdr{position:relative}
  .hero .stats{grid-template-columns:repeat(3,1fr);margin-top:24px}.hero .stats div{padding:12px 8px 0 0;margin-right:8px}.hero .stats b{font-size:20px}.hero .stats span{font-size:11px;display:block}
  .frame{padding:0 0 14px 14px;max-width:none;justify-self:stretch;margin-top:0}.frame::before{width:calc(100% - 14px);height:calc(100% - 14px)}.frame .lab{top:12px;padding:8px 12px;font-size:10px}
  .marq div{font-size:14px;padding:15px 0;gap:26px}
- .idx a{grid-template-columns:44px minmax(0,1fr) 88px;gap:6px 14px;padding:18px 0}
- .idx h3{font-size:24px}.idx p{grid-column:2/4;font-size:13.5px;grid-row:2}.idx .pr{grid-column:2;grid-row:3;text-align:left;font-size:15px}.idx .pr small{display:inline;margin-left:6px}
- .idx .th{grid-column:3;grid-row:1;height:70px}.idx .th img{height:62px}
- .idx a.feat{margin:0 -20px;padding-left:20px;padding-right:20px}
+ .idx a{grid-template-columns:minmax(0,1fr) 132px;gap:16px;padding:26px 0;align-items:center}
+ .idx a .body{grid-template-columns:40px minmax(0,1fr);column-gap:12px;row-gap:6px}
+ .idx a .th{height:132px}.idx a .th img{height:88%}
+ .idx a:nth-child(even){grid-template-columns:132px minmax(0,1fr)}
+ .idx .no{font-size:14px;padding-top:4px;grid-row:1/span 3}
+ .idx h3{font-size:22px;grid-column:2}.idx p{grid-column:2;font-size:13.5px;max-width:none}
+ .idx .pr{grid-column:2;font-size:16px;margin-top:2px}.idx .pr small{margin-left:6px;font-size:12px}
+ .idx a.feat{margin:0 -20px;padding-left:16px;padding-right:16px}
  .how{grid-template-columns:1fr}.how div{border-right:0;border-bottom:1px solid rgba(255,255,255,.2);margin:0;padding:30px 0}.how .big{font-size:80px;margin-bottom:18px}.how h3{font-size:24px}
  .bulk{grid-template-columns:1fr;min-height:0}.bulk .im{height:300px}.bulk .tx{padding:44px var(--g)}.bulk h2{font-size:36px}
  .quote{grid-template-columns:1fr;gap:30px}.quote blockquote{font-size:31px}.quote blockquote::before{font-size:100px}
@@ -158,7 +167,7 @@ html.shot .hdr{position:relative}
 <div class="marq" aria-label="Store benefits"><div>Free shipping over $35 <i>✦</i> 1–2 business day production <i>✦</i> No minimums · no setup fees <i>✦</i> Bulk discounts auto-applied <i>✦</i> Gold or silver foil <i>✦</i> 6 leatherette colors <i>✦</i> Free shipping over $35 <i>✦</i> 1–2 business day production <i>✦</i> No minimums · no setup fees <i>✦</i> Bulk discounts auto-applied <i>✦</i> Gold or silver foil <i>✦</i> 6 leatherette colors</div></div>
 <section class="sec" data-section="collection-list (editorial index)"><div class="wrap">
 <div class="sh"><div><span class="kick dk">Shop by type</span><h2>Pick your cover.</h2></div><a class="lnk" href="collection.html">View all 18 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-<div class="idx"><a class="feat" href="collection.html"><span class="no">01</span><h3>Custom logo</h3><p>Your crest, seal or company logo in metallic foil.</p><span class="pr">$25.00<small>from</small></span><span class="th"><img src="../shared-assets/products/custom-tent-style-document-cover-with-metallic-foil-printed-logo-or-text/01.jpg" alt=""></span></a><a class="" href="product.html"><span class="no">02</span><h3>Custom text</h3><p>Any wording · 4 fonts · gold or silver foil.</p><span class="pr">$25.00<small>step-by-step builder</small></span><span class="th"><img src="../shared-assets/products/custom-tent-style-document-cover-with-metallic-foil-printed-text-only/01.jpg" alt=""></span></a><a class="" href="collection.html"><span class="no">03</span><h3>Diploma phrase</h3><p>High School, GED, Home School, Degree, Class of…</p><span class="pr">$15.00<small>8 styles</small></span><span class="th"><img src="../shared-assets/products/classic-high-school-diploma-tent-style-document-cover/01.jpg" alt=""></span></a><a class="" href="collection.html"><span class="no">04</span><h3>Certificate phrase</h3><p>Citizenship, Naturalization, Marriage, Baptism…</p><span class="pr">$15.00–$20.00<small>6 styles</small></span><span class="th"><img src="../shared-assets/products/classic-certificate-of-citizenship-tent-style-document-cover/01.jpg" alt=""></span></a><a class="" href="collection.html"><span class="no">05</span><h3>Blank</h3><p>Clean, solid leatherette in five colors.</p><span class="pr">$10.00<small>from</small></span><span class="th"><img src="../shared-assets/products/blank-tent-style-document-cover/01.webp" alt=""></span></a><a class="" href="collection.html"><span class="no">06</span><h3>Made-to-Fit</h3><p>Any non-standard size, made to your measurements.</p><span class="pr">$50.00<small>any size</small></span><span class="th"><img src="../shared-assets/products/made-to-fit-custom-size-tent-style-document-cover-for-unique-dimensions/01.jpg" alt=""></span></a></div></div></section>
+<div class="idx"><a class="feat" href="collection.html"><span class="th"><img src="../shared-assets/products/custom-tent-style-document-cover-with-metallic-foil-printed-logo-or-text/01.jpg" alt=""></span><div class="body"><span class="no">01</span><h3>Custom logo</h3><p>Your crest, seal or company logo in metallic foil.</p><span class="pr">$25.00<small>from</small></span></div></a><a class="" href="product.html"><span class="th"><img src="../shared-assets/products/custom-tent-style-document-cover-with-metallic-foil-printed-text-only/01.jpg" alt=""></span><div class="body"><span class="no">02</span><h3>Custom text</h3><p>Any wording · 4 fonts · gold or silver foil.</p><span class="pr">$25.00<small>step-by-step builder</small></span></div></a><a class="" href="collection.html"><span class="th"><img src="../shared-assets/products/classic-high-school-diploma-tent-style-document-cover/01.jpg" alt=""></span><div class="body"><span class="no">03</span><h3>Diploma phrase</h3><p>High School, GED, Home School, Degree, Class of…</p><span class="pr">$15.00<small>8 styles</small></span></div></a><a class="" href="collection.html"><span class="th"><img src="../shared-assets/products/classic-certificate-of-citizenship-tent-style-document-cover/01.jpg" alt=""></span><div class="body"><span class="no">04</span><h3>Certificate phrase</h3><p>Citizenship, Naturalization, Marriage, Baptism…</p><span class="pr">$15.00–$20.00<small>6 styles</small></span></div></a><a class="" href="collection.html"><span class="th"><img src="../shared-assets/products/blank-tent-style-document-cover/01.webp" alt=""></span><div class="body"><span class="no">05</span><h3>Blank</h3><p>Clean, solid leatherette in five colors.</p><span class="pr">$10.00<small>from</small></span></div></a><a class="" href="collection.html"><span class="th"><img src="../shared-assets/products/made-to-fit-custom-size-tent-style-document-cover-for-unique-dimensions/01.jpg" alt=""></span><div class="body"><span class="no">06</span><h3>Made-to-Fit</h3><p>Any non-standard size, made to your measurements.</p><span class="pr">$50.00<small>any size</small></span></div></a></div></div></section>
 <section class="sec paper" data-section="featured-collection (best sellers)"><div class="wrap">
 <div class="sh"><div><span class="kick dk">Most loved</span><h2>Best sellers.</h2></div><a class="lnk" href="collection.html">Shop all <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
 <div class="grid4"><a class="cardb" href="product.html"><div class="m"><span class="tag ">Best seller</span><img src="../shared-assets/products/custom-tent-style-document-cover-with-metallic-foil-printed-logo-or-text/01.jpg" alt="Custom Tent-Style Document Cover with Metallic Foil Printed Logo (+/- Text)"></div><div class="b"><span class="t">Custom</span><h3>Custom Logo (+/- Text) Cover</h3><span class="r"><span class="stars" aria-hidden="true">★★★★★<span style="opacity:.3"></span></span><b>5.0</b>(522)</span>
